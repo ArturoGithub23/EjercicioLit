@@ -22,6 +22,7 @@ export class WishList extends LitElement {
       border: none;
     }
     .lista {
+      margin-top: 5px;
       height: 130px;
       overflow: scroll;
     }
@@ -89,13 +90,14 @@ export class WishList extends LitElement {
       this.minutos[indice] = {
         timeout1: setTimeout(() => {
           this.labels[indice].style.background = "green";
-        }, 120000), //120000
+        }, 30000), //120000
         timeout2: setTimeout(() => {
           this.labels[indice].style.background = "yellow";
-        }, 300000), //300000
+        }, 60000), //300000
         timeout3: setTimeout(() => {
           this.labels[indice].style.background = "red";
-        }, 480000), //480000
+          this.labels[indice].style.color = "white";
+        }, 90000), //480000
       };
     }
   }
