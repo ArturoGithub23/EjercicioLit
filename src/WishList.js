@@ -2,13 +2,14 @@ import { html, css, LitElement } from "lit";
 
 export class WishList extends LitElement {
   static styles = css`
-    h1 {
-      margin: 0 0 20px 0;
-    }
     :host {
       display: block;
       padding: 25px;
       color: var(--wish-list-text-color, #000);
+      margin: auto;
+    }
+    h1 {
+      margin: 0 0 20px 0;
     }
     .main {
       border: 1px solid blue;
@@ -59,6 +60,7 @@ export class WishList extends LitElement {
   }
 
   addToList(e) {
+    this.update();
     let entrada = e.detail;
     this.lista.push(entrada);
     console.log(this.lista);
@@ -113,7 +115,6 @@ export class WishList extends LitElement {
       }
     });
     console.log(this.lista);
-    this.update();
   }
 
   render() {
@@ -130,7 +131,7 @@ export class WishList extends LitElement {
       </li>`);
       this.temporizador(indice);
     });
-    console.log(listaRender);
+    console.log("lista render", listaRender);
     return html`
       <main class="main">
         <h1>My wishlist</h1>
